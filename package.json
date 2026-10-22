@@ -1,0 +1,34 @@
+{
+  "name": "model-battle",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cf dev",
+    "build": "cf build",
+    "preview": "vite preview",
+    "typecheck": "cf workers types && tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write src cloudflare.config.ts vite.config.ts vitest.config.ts tsconfig.json package.json README.md",
+    "format:check": "prettier --check src cloudflare.config.ts vite.config.ts vitest.config.ts tsconfig.json package.json README.md",
+    "deploy": "npm run typecheck && cf deploy"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "^1.170.45",
+    "@tanstack/react-start": "^1.169.3",
+    "lucide-react": "^1.61.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "2.0.0-beta.v.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "cf": "1.0.0-beta.18",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2",
+    "vite": "^8.0.0",
+    "vitest": "^5.0.5"
+  }
+}
